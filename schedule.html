@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      padding: 20px;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .schedule-table th {
+      background-color: #eaeaea;
+      font-weight: bold;
+    }
+
+    .schedule-table tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    .schedule-table td:first-child {
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+
+    /* スマホ表示 */
+    @media (max-width: 768px) {
+      .schedule-table thead {
+        display: none;
+      }
+
+      .schedule-table,
+      .schedule-table tbody,
+      .schedule-table tr,
+      .schedule-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .schedule-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      .schedule-table td {
+        text-align: left;
+        padding: 10px;
+        border: none;
+      }
+
+      .schedule-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .schedule-table td:first-child {
+        background-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<table class="schedule-table">
+  <thead>
+    <tr>
+      <th>対象</th>
+      <th>月曜日</th>
+      <th>水曜日</th>
+      <th>土曜日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="対象">中学生以下</td>
+      <td data-label="月曜日">18:30 ～ 20:15<br><small>（特別練習）</small></td>
+      <td data-label="水曜日">18:30 ～ 19:45</td>
+      <td data-label="土曜日">18:30 ～ 19:45</td>
+    </tr>
+    <tr>
+      <td data-label="対象">一般会員</td>
+      <td data-label="月曜日">－</td>
+      <td data-label="水曜日">20:00 ～ 21:00</td>
+      <td data-label="土曜日">20:00 ～ 21:00</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
